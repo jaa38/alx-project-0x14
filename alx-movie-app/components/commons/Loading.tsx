@@ -1,34 +1,16 @@
-import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTwitter, faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
-
-const Footer: React.FC = () => {
+const Loading: React.FC = () => {
   return (
-    <footer className="bg-[#171D22] text-white py-10 px-6 md:px-10 lg:px-20">
-      <div className="flex flex-col md:flex-row justify-between items-center w-full">
-        <h2 className="text-xl md:text-4xl font-semibold mb-4 md:mb-0">
-          Cine<span className="text-[#E2D609]">Seek</span>
-        </h2>
-
-        <nav className="flex-1 flex justify-center space-x-6 mb-4 md:mb-0">
-          <Link href="/" className="hover:text-[#E2D609] text-lg">Home</Link>
-          <Link href="/movies" className="hover:text-[#E2D609] text-lg">Movies</Link>
-          <Link href="/contact" className="hover:text-[#E2D609] text-lg">Contact</Link>
-          <Link href="/privacy" className="hover:text-[#E2D609] text-lg">Privacy Policy</Link>
-        </nav>
-
-        <div className="flex space-x-4">
-          <FontAwesomeIcon icon={faTwitter} size="lg" />
-          <FontAwesomeIcon icon={faFacebook} size="lg" />
-          <FontAwesomeIcon icon={faInstagram} size="lg" />
-        </div>
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+      <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-8 flex flex-col justify-center items-center">
+        <h1 className="text-4xl md:text-6xl font-semibold text-white mb-4 animate-pulse">
+          Loading...
+        </h1>
+        <p className="text-lg text-gray-300">
+          Please wait, we&apos;re getting next set of movies ready for you.
+        </p>
       </div>
-
-      <div className="mt-8 text-center text-sm text-gray-400">
-        <p>&copy; 2024 CineSeek. All rights reserved.</p>
-      </div>
-    </footer>
+    </div>
   );
 };
 
-export default Footer;
+export default Loading;
